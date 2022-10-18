@@ -14,7 +14,7 @@ const Bookmarks = (props: Props) => {
   };
 
   return (
-    <div className="absolute top-4 -right-[61px] text-sm flex flex-col gap-0.5">
+    <div className="absolute top-4 -right-[61px] text-xs flex flex-col gap-0.5">
       <div
         className={bookmark === "/" ? ActiveBookmark : InactiveBookmark}
         onClick={() => {
