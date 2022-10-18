@@ -28,7 +28,7 @@ const Home = ({ diaries }: Props) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getDiaries`)
     .then((res) => res.json())
     .then((data) => data.data.fetchBoards);
@@ -37,6 +37,7 @@ export async function getServerSideProps() {
     props: {
       diaries: data,
     },
+    revalidate: 10,
   };
 }
 
