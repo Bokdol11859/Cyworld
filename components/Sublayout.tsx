@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Sidebar from "./Sidebar";
 
 type Props = {
   children?: ReactNode;
@@ -18,8 +19,14 @@ const Sublayout = ({ children }: Props) => {
           사생활보호설정 <span className="text-[#ff6400]  ml-1">▶️</span>
         </div>
       </header>
-      <aside></aside>
-      <main>{children}</main>
+      <div className="flex gap-2">
+        <aside className="w-52 h-[430px] bg-white border-2 border-[#999999] rounded-lg">
+          <Sidebar />
+        </aside>
+        <main className="w-[524px] h-[430px] bg-white border-2 border-[#999999] rounded-lg">
+          {children}
+        </main>
+      </div>
     </div>
   );
 };
