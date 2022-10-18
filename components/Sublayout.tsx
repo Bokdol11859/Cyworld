@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Bookmarks from "./Bookmarks";
 import Sidebar from "./Sidebar";
 
 type Props = {
@@ -7,7 +8,7 @@ type Props = {
 
 const Sublayout = ({ children }: Props) => {
   return (
-    <div className="px-2 py-2">
+    <div className="px-2 py-2 relative">
       <header className="flex items-end justify-between h-11">
         <div className="uppercase w-52 text-center font-[NeoDunggeunmo] text-sm">
           Today <span className="text-[#FF0000] ">0</span> | Total 12345
@@ -23,10 +24,11 @@ const Sublayout = ({ children }: Props) => {
         <aside className="w-52 h-[430px] bg-white border-2 border-[#999999] rounded-lg">
           <Sidebar />
         </aside>
-        <main className="w-[524px] h-[430px] bg-white border-2 border-[#999999] rounded-lg">
+        <main className=" w-[524px] h-[430px] bg-white border-2 border-[#999999] rounded-lg">
           {children}
         </main>
       </div>
+      <Bookmarks />
     </div>
   );
 };

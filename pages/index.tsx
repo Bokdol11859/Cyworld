@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Bookmarks from "../components/Bookmarks";
 import News from "../components/News";
 import Summary from "../components/Summary";
 
