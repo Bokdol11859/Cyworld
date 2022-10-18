@@ -36,6 +36,7 @@ export async function getStaticProps() {
     props: {
       diaries: data,
     },
+    revalidate: 10,
   };
 }
 
