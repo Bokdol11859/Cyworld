@@ -26,6 +26,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Lato";
+  src: url("https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
