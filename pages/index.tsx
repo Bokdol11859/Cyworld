@@ -28,7 +28,7 @@ const Home = ({ diaries }: Props) => {
 };
 
 export async function getStaticProps() {
-  const data = await fetch("http:localhost:3000/api/getDiaries")
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getDiaries`)
     .then((res) => res.json())
     .then((data) => data.data.fetchBoards);
 
