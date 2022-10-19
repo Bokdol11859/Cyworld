@@ -1,9 +1,14 @@
 import React from "react";
+import WordGame from "../components/WordGame";
 
 type Props = {};
 
 const Game = (props: Props) => {
-  return <div>Game</div>;
+  return (
+    <div>
+      <WordGame />
+    </div>
+  );
 };
 
 export default Game;

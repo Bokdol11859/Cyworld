@@ -14,7 +14,7 @@ const Bookmarks = (props: Props) => {
   };
 
   return (
-    <div className="absolute top-4 -right-[61px] text-xs flex flex-col gap-0.5">
+    <div className="absolute top-20 -right-[52.5px] text-xs flex flex-col gap-0.5">
       <div
         className={bookmark === "/" ? ActiveBookmark : InactiveBookmark}
         onClick={() => {
@@ -44,9 +44,9 @@ const Bookmarks = (props: Props) => {
 };
 
 const ActiveBookmark =
-  "flex items-center justify-center font-[S-CoreDream] font-extralight w-[60px] h-9 bg-white border-black border-solid border-[1.5px] rounded-r-md cursor-pointer";
+  "flex items-center justify-center font-[S-CoreDream] font-extralight w-[60px] h-9 bg-white border-l-0 border-black border-solid border-[1.5px] rounded-r-md cursor-pointer";
 
 const InactiveBookmark =
-  "flex items-center justify-center font-[S-CoreDream] font-extralight w-[60px] h-9 bg-[#298EB5] text-white border-black border-solid border-[1.5px] rounded-r-md cursor-pointer";
+  "flex items-center justify-center font-[S-CoreDream] font-extralight w-[60px] h-9 bg-[#298EB5] text-white border-l-0 border-black border-solid border-[1.5px] rounded-r-md cursor-pointer";
 
 export default Bookmarks;
