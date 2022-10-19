@@ -10,12 +10,19 @@ const WordGame = (props: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (word.slice(-1) == inputRef.current?.value[0]) {
+    if (word.trim().slice(-1) == inputRef.current?.value.trim()[0]) {
       setResult("정답입니다!");
-      setWord(inputRef.current.value);
+      setTimeout(() => {
+        setResult("결과!");
+      }, 1000);
+      setWord(inputRef.current.value.trim());
     } else {
       setResult("오답입니다!");
+      setTimeout(() => {
+        setResult("결과!");
+      }, 1000);
     }
+    inputRef.current!.value = "";
   };
 
   return (
