@@ -42,7 +42,7 @@ const LottoGame = (props: Props) => {
       </div>
       <button
         onClick={randomizeNumber}
-        className="px-2 py-[2px] border-black border-[1.5px] rounded-lg bg-white hover:bg-[#999999] text-black hover:text-white text-sm"
+        className="px-2 py-1 font-[Pretendard] text-xs font-medium flex item justify-center border-black border-[1.5px] rounded-lg bg-white hover:bg-[#999999] text-black hover:text-white"
       >
         새로!
       </button>

@@ -24,4 +24,10 @@ const Game = (props: Props) => {
   );
 };
 
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}
+
 export default Game;
