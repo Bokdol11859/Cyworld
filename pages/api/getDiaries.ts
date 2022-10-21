@@ -2,10 +2,15 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { gql } from "@apollo/client";
 import client from "../../apollo-client";
+import { Diary } from "../../typings";
+
+type Data = {
+  data: Diary[];
+};
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Data>
 ) {
   const { data } = await client.query({
     query: gql`

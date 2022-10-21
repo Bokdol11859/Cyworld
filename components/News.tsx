@@ -1,4 +1,5 @@
 import React from "react";
+import { Diary } from "../typings";
 import Tag from "./Tag";
 
 type Props = {
