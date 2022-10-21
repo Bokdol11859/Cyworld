@@ -8,23 +8,25 @@ type Data = {
   data: Diary[];
 };
 
+const query = gql`
+  query fetchBoards($page: Int) {
+    fetchBoards(page: $page) {
+      number
+      writer
+      title
+      contents
+      createdAt
+      __typename
+    }
+  }
+`;
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   const { data } = await client.query({
-    query: gql`
-      query fetchBoards($page: Int) {
-        fetchBoards(page: $page) {
-          number
-          writer
-          title
-          contents
-          createdAt
-          __typename
-        }
-      }
-    `,
+    query: query,
   });
   res.status(200).json({ data: data });
 }
