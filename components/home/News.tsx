@@ -1,5 +1,5 @@
 import React from "react";
-import { Diary } from "../typings";
+import { Diary } from "../../typings";
 import Tag from "./Tag";
 
 type Props = {
@@ -17,9 +17,7 @@ const News = ({ diaries }: Props) => {
         {diaries.map((diary) => (
           <div key={diary.number} className="flex items-center gap-2">
             <Tag title={"다이어리"} />
-            <div className="font-[Lato] font-black text-xs font-medium">
-              {diary.title}
-            </div>
+            <div className="font-[Lato] font-black text-xs">{diary.title}</div>
           </div>
         ))}
       </div>

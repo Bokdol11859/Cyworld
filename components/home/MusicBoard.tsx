@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Music } from "../typings";
+import { Music } from "../../typings";
 
 type Props = {
   musics: Music[];

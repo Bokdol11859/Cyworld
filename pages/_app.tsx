@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Layout from "../components/Layout";
-import Sublayout from "../components/Sublayout";
+import Layout from "../components/global/Layout";
+import Sublayout from "../components/global/Sublayout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

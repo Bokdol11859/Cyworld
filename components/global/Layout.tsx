@@ -25,7 +25,7 @@ const Layout = ({ children }: Props) => {
           height={544}
         />
       </div>
-      <div className="absolute ml-12 mt-12 z-20 w-[752px] h-[486px] bg-[#EEEEEE] rounded-md">
+      <div className="absolute ml-12 mt-12 z-20 w-[752px] h-[486px] bg-[#EEEEEE] rounded-md ">
         {children}
       </div>
     </div>

@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Bookmarks from "../components/Bookmarks";
-import MusicBoard from "../components/MusicBoard";
-import News from "../components/News";
-import Summary from "../components/Summary";
+import Bookmarks from "../components/global/Bookmarks";
+import MusicBoard from "../components/home/MusicBoard";
+import News from "../components/home/News";
+import Summary from "../components/home/Summary";
 import { Diary, Music } from "../typings";
 import { fetchDiaryData } from "../utils/fetchDiaryData";
 import { fetchMusicData } from "../utils/fetchMusicData";
@@ -29,7 +29,7 @@ const Home = ({ diaries, musics }: Props) => {
             <News diaries={diaries.slice(0, 4)} />
             <Summary />
           </div>
-          <MusicBoard musics={musics} />
+          {/* <MusicBoard musics={musics} /> */}
         </div>
       </main>
     </div>
