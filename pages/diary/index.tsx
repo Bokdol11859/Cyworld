@@ -11,7 +11,7 @@ type Props = {
 const Diary = ({ diaries }: Props) => {
   return (
     <div className="flex flex-col items-center justify-center px-8 h-full overflow-hidden">
-      <Header title="Diary" subtitle="Today Story" />
+      <Header title="Diary" subtitle="Today Story" type="diary" />
       <div className="h-full w-full overflow-y-scroll scrollbar-hide">
         {diaries.map((diary) => (
           <Card key={diary.number} diary={diary} />
