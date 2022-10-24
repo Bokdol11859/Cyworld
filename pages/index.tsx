@@ -29,7 +29,7 @@ const Home = ({ diaries, musics }: Props) => {
             <News diaries={diaries.slice(0, 4)} />
             <Summary />
           </div>
-          {/* <MusicBoard musics={musics} /> */}
+          <MusicBoard musics={musics} />
         </div>
       </main>
     </div>
