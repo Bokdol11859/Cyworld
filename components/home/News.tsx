@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { Diary } from "../../typings";
 import Tag from "./Tag";
@@ -7,6 +8,8 @@ type Props = {
 };
 
 const News = ({ diaries }: Props) => {
+  const router = useRouter();
+
   return (
     <div className="w-[250px]">
       <div className="font-[Lato] font-black text-md text-[#55B2D4]">
@@ -17,7 +20,14 @@ const News = ({ diaries }: Props) => {
         {diaries.map((diary) => (
           <div key={diary.number} className="flex items-center gap-2">
             <Tag title={"다이어리"} />
-            <div className="font-[Lato] font-black text-xs">{diary.title}</div>
+            <div
+              onClick={() => {
+                router.push(`/diary/${diary.number}`);
+              }}
+              className="font-[Lato] font-black text-xs"
+            >
+              {diary.title}
+            </div>
           </div>
         ))}
       </div>

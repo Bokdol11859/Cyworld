@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 const DiaryDetail = () => {
-  return <div>DiaryDetail</div>;
+  const router = useRouter();
+  return <div>{router.query.id}</div>;
 };
 
 export default DiaryDetail;
