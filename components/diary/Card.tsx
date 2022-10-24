@@ -8,14 +8,20 @@ type Props = {
 
 const Card = ({ diary }: Props) => {
   return (
-    <div className="w-full px-4 py-2">
-      <div className="w-10 bg-[#55b2d4]">s</div>
-      <div>
-        <p></p>
-        <Link href="/">
-          <a>자세히 보러 가기 {">"}</a>
-        </Link>
+    <div className="flex justify-between items-center w-full px-4 py-4 mb-3 border-[#DDDDDD] border-2 rounded-md">
+      <div className="flex flex-col">
+        <div className="w-16 bg-[#55b2d4] text-white font-[Pretendard] text-[10px] text-center rounded-sm py-[1px]">
+          2022-10-24
+        </div>
+        <p className="text-[#999999] font-bold text-sm my-1">
+          제목: 다이어리 제목
+        </p>
       </div>
+      <Link href="/">
+        <a className="font-[S-CoreDream] text-[#343131] underline-offset-2 underline text-xs">
+          자세히 보러 가기 {">"}
+        </a>
+      </Link>
     </div>
   );
 };
