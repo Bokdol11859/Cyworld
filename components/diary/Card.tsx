@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import Diary from "../../pages/diary";
+import { Diary } from "../../typings";
 
 type Props = {
   diary: Diary;
