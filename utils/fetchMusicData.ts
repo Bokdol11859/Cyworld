@@ -6,6 +6,5 @@ export const fetchMusicData = async () => {
   )
     .then((res) => res.json())
     .then((data) => data.data);
-  console.log(Musics);
   return Musics;
 };

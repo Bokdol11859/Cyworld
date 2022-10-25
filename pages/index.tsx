@@ -14,7 +14,6 @@ type Props = {
 };
 
 const Home = ({ diaries, musics }: Props) => {
-  console.log(diaries);
   return (
     <div>
       <Head>
