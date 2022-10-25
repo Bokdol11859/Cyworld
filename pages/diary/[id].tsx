@@ -16,7 +16,7 @@ const DiaryDetail = ({ diary }: props) => {
 
 export async function getStaticPaths() {
   const diaries = await fetchDiaryData();
-
+  console.log(diaries);
   const paths = diaries.map((diary) => ({
     params: {
       id: diary.number.toString(),
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: { params: { id: any } }) {
   const id = context.params.id;
-  console.log(id);
+  // console.log(id);
   const diary = await fetchEachDiaryData(id);
   return {
     props: {
