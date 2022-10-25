@@ -10,5 +10,6 @@ export const fetchEachDiaryData = async (id: props) => {
   )
     .then((res) => res.json())
     .then((data) => data.data.fetchBoard);
+
   return diary;
 };

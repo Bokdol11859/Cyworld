@@ -10,8 +10,8 @@ type props = {
 
 const DiaryDetail = ({ diary }: props) => {
   const router = useRouter();
-  console.log(diary);
-  return <div>{router.query.id}</div>;
+  // console.log(diary);
+  return <div>{diary.contents}</div>;
 };
 
 export async function getStaticPaths() {
@@ -31,8 +31,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: { params: { id: any } }) {
   const id = context.params.id;
-  // console.log(id);
+
   const diary = await fetchEachDiaryData(id);
+  console.log(diary);
   return {
     props: {
       diary: diary,
