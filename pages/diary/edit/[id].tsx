@@ -30,8 +30,8 @@ const mutation = gql`
 const EditDiary = (props: Props) => {
   const router = useRouter();
 
-  const titleRef = useRef();
-  const contentRef = useRef();
+  const titleRef = useRef<HTMLInputElement>(null);
+  const contentRef = useRef<HTMLTextAreaElement>(null);
 
   const { diaryData } = useDiary();
 
@@ -41,8 +41,8 @@ const EditDiary = (props: Props) => {
       variables: {
         number: Number(router.query.id),
         writer: "Eric Park",
-        title: titleRef.current.value,
-        contents: contentRef.current.value,
+        title: titleRef.current?.value,
+        contents: contentRef.current?.value,
       },
     });
     window.alert("수정 완료");
