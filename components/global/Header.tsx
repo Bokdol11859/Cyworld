@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { ReactNode } from "react";
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
 };
 
 const Header = ({ title, subtitle, type }: Props) => {
+  const router = useRouter();
   return (
     <div className="w-full py-4">
       <div className="flex justify-between">
@@ -17,7 +19,12 @@ const Header = ({ title, subtitle, type }: Props) => {
           {subtitle}
         </p>
         {type === "diary" && (
-          <div className="flex items-center justify-center px-1 border-[#ABABAB] border-[1.5px] w-[70px] h-6 text-[10px] rounded-md cursor-pointer">
+          <div
+            onClick={() => {
+              router.push("/diary/create");
+            }}
+            className="flex items-center justify-center px-1 border-[#ABABAB] border-[1.5px] w-[70px] h-6 text-[10px] rounded-md cursor-pointer"
+          >
             다이어리 작성
           </div>
         )}

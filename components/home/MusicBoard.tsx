@@ -41,7 +41,7 @@ const MusicBoard = ({ musics }: Props) => {
       </div>
       <div>
         <table className="text-[10px] text-[#999999] font-[Pretendard]">
-          <tr className="flex items-center justify-center border-y-[1px] bg-[#EEEEEE] border-[#999999] w-[460px]">
+          <tr className="flex items-center justify-center border-y-[1px] bg-[#EEEEEE] border-[#999999] w-[450px]">
             <th className="w-14 flex items-left justify-center">
               <input
                 type="checkbox"
@@ -80,7 +80,7 @@ const MusicBoard = ({ musics }: Props) => {
 };
 
 const TableRowStyle =
-  "flex items-center justify-center border-dotted border-b-[1.5px] border-[#999999] w-[460px] py-[1px]";
+  "flex items-center justify-center border-dotted border-b-[1.5px] border-[#999999] w-[450px] py-[1px]";
 
 const TableRowHeadStyle = "w-14 flex items-left justify-center";
 

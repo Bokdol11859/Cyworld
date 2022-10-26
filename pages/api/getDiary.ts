@@ -27,7 +27,7 @@ export default async function handler(
   const { data } = await client.query({
     query: query,
     variables: {
-      number: req.query.id,
+      number: Number(req.query.id),
     },
   });
 

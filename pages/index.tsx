@@ -22,7 +22,7 @@ const Home = ({ diaries, musics }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="py-8 px-8">
+      <main className="py-4 px-8">
         <div>
           <div className="flex gap-6">
             <News diaries={diaries.slice(0, 4)} />
