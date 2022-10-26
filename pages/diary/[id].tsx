@@ -90,22 +90,34 @@ const DiaryDetail = ({ diary }: props) => {
   );
 };
 
-export async function getStaticPaths() {
-  const diaries = await fetchDiaryData();
-  console.log(diaries);
-  const paths = diaries.map((diary) => ({
-    params: {
-      id: diary.number.toString(),
-    },
-  }));
+// export async function getStaticPaths() {
+//   const diaries = await fetchDiaryData();
+//   console.log(diaries);
+//   const paths = diaries.map((diary) => ({
+//     params: {
+//       id: diary.number.toString(),
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
-export async function getStaticProps(context: { params: { id: any } }) {
+// export async function getStaticProps(context: { params: { id: any } }) {
+//   const id = context.params.id;
+
+//   const diary = await fetchEachDiaryData(id);
+//   console.log(diary);
+//   return {
+//     props: {
+//       diary: diary,
+//     },
+//   };
+// }
+
+export async function getServerSideProps(context: { params: { id: any } }) {
   const id = context.params.id;
 
   const diary = await fetchEachDiaryData(id);
