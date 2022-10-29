@@ -27,6 +27,7 @@ export default async function handler(
 ) {
   const { data } = await client.query({
     query: query,
+    fetchPolicy: "no-cache",
   });
   res.status(200).json({ data: data });
 }

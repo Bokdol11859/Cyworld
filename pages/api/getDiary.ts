@@ -29,9 +29,8 @@ export default async function handler(
     variables: {
       number: Number(req.query.id),
     },
+    fetchPolicy: "no-cache",
   });
-
-  console.log("data: ", data);
 
   res.status(200).json({ data: data });
 }

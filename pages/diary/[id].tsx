@@ -121,7 +121,6 @@ export async function getServerSideProps(context: { params: { id: any } }) {
   const id = context.params.id;
 
   const diary = await fetchEachDiaryData(id);
-  console.log(diary);
   return {
     props: {
       diary: diary,

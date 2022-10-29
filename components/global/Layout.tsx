@@ -17,7 +17,7 @@ const Layout = ({ children }: Props) => {
           objectFit="cover"
         />
       </div>
-      <div className="absolute top-0 left-0 z-10 pl-5 pt-5 z-10">
+      <div className="absolute top-0 left-0 pl-5 pt-5 z-10">
         <Image
           src="/static/inner box.svg"
           alt="innerbox"
