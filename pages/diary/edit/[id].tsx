@@ -5,8 +5,6 @@ import { useDiary } from "../../../contexts/DiaryContext";
 import { gql } from "@apollo/client";
 import client from "../../../apollo-client";
 import Editor from "../../../components/global/Editor";
-import { fetchDiaryData } from "../../../utils/fetchDiaryData";
-import { fetchEachDiaryData } from "../../../utils/fetchEachDiaryData";
 import { Diary } from "../../../typings";
 
 const mutation = gql`
@@ -29,11 +27,7 @@ const mutation = gql`
   }
 `;
 
-type Props = {
-  diary: Diary;
-};
-
-const EditDiary = ({ diary }: Props) => {
+const EditDiary = () => {
   const router = useRouter();
 
   const titleRef = useRef<HTMLInputElement>(null);
@@ -67,30 +61,5 @@ const EditDiary = ({ diary }: Props) => {
     </div>
   );
 };
-
-export async function getStaticPaths() {
-  const diaries = await fetchDiaryData();
-  const paths = diaries.map((diary) => ({
-    params: {
-      id: diary.number.toString(),
-    },
-  }));
-
-  return {
-    paths,
-    fallback: "blocking",
-  };
-}
-
-export async function getStaticProps(context: { params: { id: any } }) {
-  const id = context.params.id;
-
-  const diary = await fetchEachDiaryData(id);
-  return {
-    props: {
-      diary: diary,
-    },
-  };
-}
 
 export default EditDiary;
