@@ -3,9 +3,7 @@ import Header from "../components/global/Header";
 import LottoGame from "../components/game/LottoGame";
 import WordGame from "../components/game/WordGame";
 
-type Props = {};
-
-const Game = (props: Props) => {
+const Game = () => {
   return (
     <div className="flex flex-col items-center justify-center px-8 py-0">
       <Header title="Game" subtitle="Today Choice" />
@@ -16,11 +14,5 @@ const Game = (props: Props) => {
     </div>
   );
 };
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}
 
 export default Game;

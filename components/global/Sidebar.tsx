@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
-
-const Sidebar = (props: Props) => {
+const Sidebar = () => {
   return (
     <div className="flex flex-col items-center justify-center py-6">
       <div>

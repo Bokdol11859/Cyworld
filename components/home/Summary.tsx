@@ -1,10 +1,8 @@
 import React from "react";
 
-type Props = {};
-
 const Divider = () => <hr className="w-44 border-dashed border-[#999999]" />;
 
-const Summary = (props: Props) => {
+const Summary = () => {
   return (
     <div className="mt-7">
       <Divider />

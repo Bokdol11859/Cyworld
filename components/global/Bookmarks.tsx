@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-type Props = {};
-
-const Bookmarks = (props: Props) => {
+const Bookmarks = () => {
   const router = useRouter();
 
   const [bookmark, setBookmark] = useState(router.pathname);

@@ -5,8 +5,6 @@ import client from "../../apollo-client";
 import Editor from "../../components/global/Editor";
 import Header from "../../components/global/Header";
 
-type Props = {};
-
 const creation = gql`
   mutation createBoard($writer: String, $title: String, $contents: String) {
     createBoard(writer: $writer, title: $title, contents: $contents) {
@@ -17,7 +15,7 @@ const creation = gql`
   }
 `;
 
-const CreateDiary = (props: Props) => {
+const CreateDiary = () => {
   const router = useRouter();
 
   const titleRef = useRef<HTMLInputElement>(null);

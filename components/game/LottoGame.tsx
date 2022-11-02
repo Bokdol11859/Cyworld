@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-type Props = {};
-
-const LottoGame = (props: Props) => {
+const LottoGame = () => {
   const [numbers, setNumbers] = useState<number[]>([]);
 
   const randomizeNumber = () => {

@@ -54,24 +54,20 @@ const MusicBoard = ({ musics }: Props) => {
             <th className="w-40 text-left">아티스트</th>
           </tr>
           {musicData.map((music) => (
-            <>
-              <tr className={TableRowStyle}>
-                <th className={TableRowHeadStyle}>
-                  <input
-                    type="checkbox"
-                    checked={music.input}
-                    onChange={() => {
-                      handleClick(music.id);
-                    }}
-                  />
-                </th>
-                <th className="w-6 mr-4 text-[#0F465E]">{music.id}</th>
-                <th className="w-60 text-left text-[#0F465E]">{music.title}</th>
-                <th className="w-40 text-left text-[#0F465E]">
-                  {music.artist}
-                </th>
-              </tr>
-            </>
+            <tr className={TableRowStyle} key={music.id}>
+              <th className={TableRowHeadStyle}>
+                <input
+                  type="checkbox"
+                  checked={music.input}
+                  onChange={() => {
+                    handleClick(music.id);
+                  }}
+                />
+              </th>
+              <th className="w-6 mr-4 text-[#0F465E]">{music.id}</th>
+              <th className="w-60 text-left text-[#0F465E]">{music.title}</th>
+              <th className="w-40 text-left text-[#0F465E]">{music.artist}</th>
+            </tr>
           ))}
         </table>
       </div>

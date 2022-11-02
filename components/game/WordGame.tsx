@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
-type Props = {};
-
-const WordGame = (props: Props) => {
+const WordGame = () => {
   const [word, setWord] = useState<string>("코드캠프");
   const [result, setResult] = useState<string>("결과!");
   const inputRef = useRef<HTMLInputElement>(null);
