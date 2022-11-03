@@ -14,7 +14,7 @@ export const GET_DIARIES = gql`
 `;
 
 export const GET_DIARY = gql`
-  query fetchBoard($number: Int) {
+  query fetchBoard($number: Int!) {
     fetchBoard(number: $number) {
       writer
       title
@@ -26,7 +26,7 @@ export const GET_DIARY = gql`
 `;
 
 export const DELETE_DIARY = gql`
-  mutation deleteBoard($number: Int) {
+  mutation deleteBoard($number: Int!) {
     deleteBoard(number: $number) {
       message
       __typename
@@ -35,7 +35,7 @@ export const DELETE_DIARY = gql`
 `;
 
 export const CREATE_DIARY = gql`
-  mutation createBoard($writer: String, $title: String, $contents: String) {
+  mutation createBoard($writer: String!, $title: String!, $contents: String!) {
     createBoard(writer: $writer, title: $title, contents: $contents) {
       _id
       number
@@ -46,10 +46,10 @@ export const CREATE_DIARY = gql`
 
 export const UPDATE_DIARY = gql`
   mutation updateBoard(
-    $number: Int
-    $writer: String
-    $title: String
-    $contents: String
+    $number: Int!
+    $writer: String!
+    $title: String!
+    $contents: String!
   ) {
     updateBoard(
       number: $number
