@@ -1,28 +1,17 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { randomizeNumber } from "../../utils/randomizeNumber";
 
-const LottoGame = () => {
-  const [numbers, setNumbers] = useState<number[]>([]);
+type Props = {
+  initialNumbers: number[];
+};
 
-  const randomizeNumber = () => {
-    let temp = [];
+const LottoGame = ({ initialNumbers }: Props) => {
+  const [numbers, setNumbers] = useState<number[]>(initialNumbers);
 
-    for (let i = 1; i <= 45; i++) {
-      temp.push(Number(i));
-    }
-
-    temp.sort(() => Math.random() - 0.5);
-
-    setNumbers(
-      temp.slice(0, 6).sort(function (a, b) {
-        return a - b;
-      })
-    );
+  const handleClick = () => {
+    setNumbers(randomizeNumber());
   };
-
-  useEffect(() => {
-    randomizeNumber();
-  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center w-[220px] h-[168px] bg-[#F6F6F6] border-[#999999] border-solid border-[1.5px] rounded-lg">
@@ -39,7 +28,7 @@ const LottoGame = () => {
         ))}
       </div>
       <button
-        onClick={randomizeNumber}
+        onClick={handleClick}
         className="px-2 py-1 font-[Pretendard] text-xs font-medium flex item justify-center border-black border-[1.5px] rounded-lg bg-white hover:bg-[#999999] text-black hover:text-white"
       >
         새로!
