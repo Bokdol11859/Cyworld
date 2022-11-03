@@ -14,6 +14,9 @@ export default async function handler(
 ) {
   const { data } = await client.query({
     query: GET_DIARIES,
+    variables: {
+      page: Number(req.query.page),
+    },
     fetchPolicy: "no-cache",
   });
   res.status(200).json({ data: data });

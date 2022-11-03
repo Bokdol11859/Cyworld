@@ -115,17 +115,6 @@ export async function getStaticProps(context: { params: { id: any } }) {
   };
 }
 
-// export async function getServerSideProps(context: { params: { id: any } }) {
-//   const id = context.params.id;
-
-//   const diary = await fetchEachDiaryData(id);
-//   return {
-//     props: {
-//       diary: diary,
-//     },
-//   };
-// }
-
 const buttonStyle =
   "border-[#666666] border-[1.5px] px-3 py-[2px] bg-[#D9D9D9] hover:bg-[#666666] hover:text-white rounded-md cursor-pointer text-sm";
 
