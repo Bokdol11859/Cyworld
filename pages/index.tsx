@@ -36,7 +36,7 @@ const Home = ({ diaries, musics }: Props) => {
 };
 
 export async function getServerSideProps() {
-  const data = await fetchDiaryData();
+  const data = await fetchDiaryData(1);
   const musics = await fetchMusicData();
 
   return {

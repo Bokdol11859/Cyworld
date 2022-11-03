@@ -50,7 +50,7 @@ const Diary = ({ diaries }: Props) => {
 };
 
 export async function getServerSideProps() {
-  const diaries = await fetchDiaryData();
+  const diaries = await fetchDiaryData(1);
   return {
     props: {
       diaries: diaries,

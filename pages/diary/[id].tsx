@@ -90,7 +90,7 @@ const DiaryDetail = ({ diary }: props) => {
 };
 
 export async function getStaticPaths() {
-  const diaries = await fetchDiaryData();
+  const diaries = await fetchDiaryData(1);
   const paths = diaries.map((diary) => ({
     params: {
       id: diary.number.toString(),
