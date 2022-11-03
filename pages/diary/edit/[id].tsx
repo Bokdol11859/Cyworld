@@ -1,31 +1,11 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Header from "../../../components/global/Header";
 import { useDiary } from "../../../contexts/DiaryContext";
-import { gql } from "@apollo/client";
 import client from "../../../apollo-client";
 import Editor from "../../../components/global/Editor";
 import { Diary } from "../../../typings";
-
-const mutation = gql`
-  mutation updateBoard(
-    $number: Int
-    $writer: String
-    $title: String
-    $contents: String
-  ) {
-    updateBoard(
-      number: $number
-      writer: $writer
-      title: $title
-      contents: $contents
-    ) {
-      _id
-      number
-      __typename
-    }
-  }
-`;
+import { UPDATE_DIARY } from "../../../graphql/queries";
 
 const EditDiary = () => {
   const router = useRouter();
@@ -37,7 +17,7 @@ const EditDiary = () => {
 
   const handleEdit = () => {
     client.mutate({
-      mutation: mutation,
+      mutation: UPDATE_DIARY,
       variables: {
         number: Number(router.query.id),
         writer: "Eric Park",

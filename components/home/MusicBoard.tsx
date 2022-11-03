@@ -34,7 +34,7 @@ const MusicBoard = ({ musics }: Props) => {
   return (
     <div>
       <div className="flex items-end mt-5">
-        <div className="font-[Lato] font-black text-md text-[#55B2D4] mr-4">
+        <div className="font-[ ] font-black text-md text-[#55B2D4] mr-4">
           추억의 BGM
         </div>
         <p className="text-[10px] font-medium mb-[2px]">TODAY CHOICE</p>

@@ -12,8 +12,8 @@ const Header = ({ title, subtitle, type }: Props) => {
   return (
     <div className="w-full py-4">
       <div className="flex justify-between">
-        <p className="uppercase text-[10px] font-[Lato] font-extrabold">
-          <span className="text-[#55B2D4] font-[Lato] font-extrabold text-[16px]">
+        <p className="uppercase text-[10px] font-extrabold">
+          <span className="text-[#55B2D4] font-extrabold text-[16px]">
             {title}
           </span>{" "}
           {subtitle}

@@ -1,9 +1,9 @@
-import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import client from "../../apollo-client";
 import Header from "../../components/global/Header";
 import { useDiary } from "../../contexts/DiaryContext";
+import { DELETE_DIARY } from "../../graphql/queries";
 import { Diary } from "../../typings";
 import { fetchDiaryData } from "../../utils/fetchDiaryData";
 import { fetchEachDiaryData } from "../../utils/fetchEachDiaryData";
@@ -17,15 +17,6 @@ const DiaryDetail = ({ diary }: props) => {
   const { setDiaryData } = useDiary();
   const date = new Date(Date.parse(diary.createdAt));
 
-  const deletion = gql`
-    mutation deleteBoard($number: Int) {
-      deleteBoard(number: $number) {
-        message
-        __typename
-      }
-    }
-  `;
-
   useEffect(() => {
     setDiaryData({
       title: diary.title,
@@ -35,7 +26,7 @@ const DiaryDetail = ({ diary }: props) => {
 
   const handleDelete = async () => {
     await client.mutate({
-      mutation: deletion,
+      mutation: DELETE_DIARY,
       variables: {
         number: Number(router.query.id),
       },

@@ -1,19 +1,9 @@
-import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { useRef } from "react";
 import client from "../../apollo-client";
 import Editor from "../../components/global/Editor";
 import Header from "../../components/global/Header";
-
-const creation = gql`
-  mutation createBoard($writer: String, $title: String, $contents: String) {
-    createBoard(writer: $writer, title: $title, contents: $contents) {
-      _id
-      number
-      __typename
-    }
-  }
-`;
+import { CREATE_DIARY } from "../../graphql/queries";
 
 const CreateDiary = () => {
   const router = useRouter();
@@ -23,7 +13,7 @@ const CreateDiary = () => {
 
   const handleCreate = () => {
     client.mutate({
-      mutation: creation,
+      mutation: CREATE_DIARY,
       variables: {
         writer: "Eric Park",
         title: titleRef.current?.value,
