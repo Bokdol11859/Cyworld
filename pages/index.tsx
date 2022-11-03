@@ -15,22 +15,12 @@ type Props = {
 
 const Home = ({ diaries, musics }: Props) => {
   return (
-    <div>
-      <Head>
-        <title>넘블월드</title>
-        <meta name="description" content="넘블월드" />
-        <link rel="icon" href="/static/profile.png" />
-      </Head>
-
-      <main className="py-4 px-8">
-        <div>
-          <div className="flex gap-6">
-            <News diaries={diaries.slice(0, 4)} />
-            <Summary />
-          </div>
-          <MusicBoard musics={musics} />
-        </div>
-      </main>
+    <div className="py-4 px-8">
+      <div className="flex gap-6">
+        <News diaries={diaries.slice(0, 4)} />
+        <Summary />
+      </div>
+      <MusicBoard musics={musics} />
     </div>
   );
 };

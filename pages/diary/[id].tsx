@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import client from "../../apollo-client";
 import Header from "../../components/global/Header";
 import { useDiary } from "../../contexts/DiaryContext";
-import { DELETE_DIARY } from "../../graphql/queries";
+import { DELETE_DIARY, GET_DIARIES } from "../../graphql/queries";
 import { Diary } from "../../typings";
 import { fetchDiaryData } from "../../utils/fetchDiaryData";
 import { fetchEachDiaryData } from "../../utils/fetchEachDiaryData";
@@ -31,6 +31,7 @@ const DiaryDetail = ({ diary }: props) => {
       variables: {
         number: Number(router.query.id),
       },
+      refetchQueries: [{ query: GET_DIARIES }],
     });
     window.alert("삭제 완료");
     router.push("/diary");
@@ -38,11 +39,6 @@ const DiaryDetail = ({ diary }: props) => {
 
   return (
     <>
-      <Head>
-        <title>{diary.title}</title>
-        <meta name="description" content="넘블월드" />
-        <link rel="icon" href="/static/profile.png" />
-      </Head>
       <div className="flex flex-col items-center justify-center px-8 py-0">
         <Header title="Diary" subtitle="" />
         <div className="w-full h-64 border-2 border-[#DDDDDD] rounded-sm">
