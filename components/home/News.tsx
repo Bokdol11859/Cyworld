@@ -12,9 +12,7 @@ const News = ({ diaries }: Props) => {
 
   return (
     <div className="w-[250px]">
-      <div className="font-[' '] font-black text-md text-[#55B2D4]">
-        Updated News
-      </div>
+      <div className="font-black text-md text-[#55B2D4]">Updated News</div>
       <hr className="my-1 h-0.5 bg-[#999999]" />
       <div className="flex flex-col gap-1">
         {diaries.map((diary) => (
@@ -24,7 +22,7 @@ const News = ({ diaries }: Props) => {
               onClick={() => {
                 router.push(`/diary/${diary.number}`);
               }}
-              className="font-[ ] font-black text-xs cursor-pointer"
+              className="font-black text-xs cursor-pointer"
             >
               {diary.title}
             </div>

@@ -7,7 +7,7 @@ const Sidebar = () => {
       <div>
         <Image
           src="/static/profile.png"
-          alt="/static/profile.png"
+          alt="profile"
           width={144}
           height={124}
         />

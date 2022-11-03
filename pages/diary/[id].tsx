@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import client from "../../apollo-client";
@@ -36,48 +37,55 @@ const DiaryDetail = ({ diary }: props) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-8 py-0">
-      <Header title="Diary" subtitle="" />
-      <div className="w-full h-64 border-2 border-[#DDDDDD] rounded-sm">
-        <div className="flex items-center pl-4 h-6 bg-[#DDDDDD]">
-          <p className="text-[#666666] text-sm font-medium">
-            {date.getFullYear()}-{date.getMonth() + 1}-{date.getDate()}
-          </p>
-        </div>
-        <div className="flex flex-col justify-center items-center h-[calc(100%-24px)]">
-          <div className="h-12">
-            <h1 className="font-bold">제목 : {diary.title}</h1>
+    <>
+      <Head>
+        <title>{diary.title}</title>
+        <meta name="description" content="넘블월드" />
+        <link rel="icon" href="/static/profile.png" />
+      </Head>
+      <div className="flex flex-col items-center justify-center px-8 py-0">
+        <Header title="Diary" subtitle="" />
+        <div className="w-full h-64 border-2 border-[#DDDDDD] rounded-sm">
+          <div className="flex items-center pl-4 h-6 bg-[#DDDDDD]">
+            <p className="text-[#666666] text-sm font-medium">
+              {date.getFullYear()}-{date.getMonth() + 1}-{date.getDate()}
+            </p>
           </div>
-          <div className="h-[calc(100%-96px)] w-96 text-sm text-[#666666]">
-            <p>{diary.contents}</p>
+          <div className="flex flex-col justify-center items-center h-[calc(100%-24px)]">
+            <div className="h-12">
+              <h1 className="font-bold">제목 : {diary.title}</h1>
+            </div>
+            <div className="h-[calc(100%-96px)] w-96 text-sm text-[#666666]">
+              <p>{diary.contents}</p>
+            </div>
           </div>
         </div>
-      </div>
-      {diary.number}
-      <div className="flex w-full items-center justify-center gap-6 py-5">
+        {diary.number}
+        <div className="flex w-full items-center justify-center gap-6 py-5">
+          <div
+            className={buttonStyle}
+            onClick={() => {
+              router.push(`edit/${router.query.id}`);
+            }}
+          >
+            수정하기
+          </div>
+          <div onClick={handleDelete} className={buttonStyle}>
+            삭제하기
+          </div>
+        </div>
         <div
-          className={buttonStyle}
+          className="w-full text-sm text-[#666666] underline
+      underline-offset-2 cursor-pointer "
           onClick={() => {
-            router.push(`edit/${router.query.id}`);
+            router.push("/diary/");
           }}
         >
-          수정하기
-        </div>
-        <div onClick={handleDelete} className={buttonStyle}>
-          삭제하기
+          {" "}
+          {"<"} 목록으로
         </div>
       </div>
-      <div
-        className="w-full text-sm text-[#666666] underline
-      underline-offset-2 cursor-pointer "
-        onClick={() => {
-          router.push("/diary/");
-        }}
-      >
-        {" "}
-        {"<"} 목록으로
-      </div>
-    </div>
+    </>
   );
 };
 

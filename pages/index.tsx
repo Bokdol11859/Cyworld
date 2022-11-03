@@ -19,7 +19,7 @@ const Home = ({ diaries, musics }: Props) => {
       <Head>
         <title>넘블월드</title>
         <meta name="description" content="넘블월드" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/static/profile.png" />
       </Head>
 
       <main className="py-4 px-8">
