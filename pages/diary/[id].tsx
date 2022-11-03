@@ -107,7 +107,7 @@ export async function getStaticProps(context: { params: { id: any } }) {
     props: {
       diary: diary,
     },
-    revalidate: 10,
+    revalidate: 5,
   };
 }
 
