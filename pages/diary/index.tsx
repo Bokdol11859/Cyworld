@@ -12,7 +12,7 @@ type Props = {
 
 const Diary = ({ diaries }: Props) => {
   const [diaryList, setDiaryList] = useState(diaries);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const fetchElement = useRef(null);
   const intersecting = useInfiniteScroll(fetchElement);
 
