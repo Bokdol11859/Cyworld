@@ -26,7 +26,7 @@ const EditDiary = () => {
       refetchQueries: [{ query: GET_DIARIES }],
     });
     window.alert("수정 완료");
-    router.push(`/diary`);
+    router.push(`/diary/${router.query.id}`);
   };
 
   return (

@@ -85,20 +85,6 @@ const DiaryDetail = ({ diary }: props) => {
   );
 };
 
-// export async function getStaticPaths() {
-//   const diaries = await fetchDiaryData(1);
-//   const paths = diaries.map((diary) => ({
-//     params: {
-//       id: diary.number.toString(),
-//     },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: "blocking",
-//   };
-// }
-
 export async function getServerSideProps(context: { params: { id: any } }) {
   const id = context.params.id;
 
@@ -107,7 +93,6 @@ export async function getServerSideProps(context: { params: { id: any } }) {
     props: {
       diary: diary,
     },
-    // revalidate: 5,
   };
 }
 
