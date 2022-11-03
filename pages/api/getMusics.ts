@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Music } from "../../typings";
-import { Musics } from "../../Constants/MusicData";
+import { Musics } from "../../constants/MusicData";
 
 type Data = {
   data: Music[];

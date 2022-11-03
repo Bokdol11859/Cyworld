@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { randomizeNumber } from "../../utils/randomizeNumber";
+import { randomizeNumber } from "../../utils/randomizeNumbers";
 
 type Props = {
   initialNumbers: number[];

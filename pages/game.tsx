@@ -3,7 +3,7 @@ import Header from "../components/global/Header";
 import LottoGame from "../components/game/LottoGame";
 import WordGame from "../components/game/WordGame";
 import Head from "next/head";
-import { randomizeNumber } from "../utils/randomizeNumber";
+import { randomizeNumber } from "../utils/randomizeNumbers";
 
 type Props = {
   numbers: number[];
