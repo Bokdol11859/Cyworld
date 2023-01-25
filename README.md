@@ -30,14 +30,15 @@
 
 ## 활용 기술
   
-- **[Typescript]()**: 자바스크립트의 문법에 타입 지정을 할 수 있도록 만들어진 언어로, 자바스크립트의 자유도와 타입 언어의 안정성까지 갖춘 언어입니다. 해커톤이라는 짧은 시간동안 최대한 오류를 방지하여 완성도를 높히고, 타입스크립트를 통한 타입 추론의 도움을 받기 위해 사용했습니다.  
+- **[Typescript]()**: Typescript는 Javscript의 문법에 타입 지정을 할 수 있도록 만들어진 언어로, 자바스크립트의 자유도와 타입 언어의 안정성까지 갖춘 언어입니다. 개발 과정에서 타입 추론의 도움을 받기 위해 사용했습니다.  
   
-- **[NextJS]()**: ReactJS를 더욱 간편하게 사용하기 위해 만들어진 프레임워크로, 추가적인 설정 없이도 기본적으로 ServerSideRendering이 가능한 것이 장점입니다. 또한, 외부 라이브러리의 도움 없이도 자동으로 파일 구조 기반 라우팅이 가능하여 직관적인 폴더 구조를 구축할 수 있습니다. 일기 페이지같은 경우 데이터의 변경이 잦지 않기 때문에 SSG/ISR을 추후에 적용하고자 NextJS를 도입하게 되었습니다. 
+- **[NextJS]()**: ReactJS를 더욱 간편하게 사용하기 위해 만들어진 프레임워크로, 추가적인 설정 없이도 기본적으로 ServerSideRendering이 가능한 것이 장점입니다. 또한, 외부 라이브러리의 도움 없이도 자동으로 파일 구조 기반 라우팅이 가능하여 직관적인 폴더 구조를 구축할 수 있습니다. 다이어리 페이지같은 경우 데이터의 변경이 잦지 않기 때문에 SSG/ISR을 적용하기 위해 NextJS를 도입했습니다.
   
-- **[Styled-Component]()**: CSS 파일 없이 자바스크립트 안에서 CSS 작업을 하기 위한 라이브러리로, 서비스 스타일링의 대부분을 Styled-Component를 통해서 작업했습니다. Props 전달이 가능하기 때문에 상태에 따른 스타일링을 더욱 간편하게 처리할 수 있습니다.
+- **[TailwindCSS]()**: TailwindCSS는 Utility-first라는 컨셉을 갖고 나온 CSS 프레임워크로, html 태그에 인라인 스타일링을 적용할 수 있습니다. CSS-in-JS와는 다르게 런타임에 스타일에 적용이 되는게 아니기에 성능 측면에서 효율적이고, 개발과정에서 클래스 이름을 고민하지 않아도 되기에 빠른 개발이 가능하다는 것이 장점입니다. 
   
-- **[Axios]()**: 백엔드와 통신을 하기 위한 HTTP 클라이언트 라이브러리로, 자바스크립트 내장 라이브러리인 fetch 함수엔 없는 인터셉터와 더욱 간편한 에러 캐치를 위해 사용했습니다.
-
+- **[GraphQL (Apollo Client)]()**: GraphQL은 REST API와는 다르게 하나의 endpoint에 프론트에서 직접 쿼리를 날려 원하는 데이터만을 가져올 수 있도록 하는 query-language입니다. REST API를 통해 백엔드와 통신을 할 때 자주 겪었던 Under-fetching/Over-fetching을 해결할 수 있었습니다. 또한, GraphQL client로는 Apollo Client를 이용했습니다. 
+  
+  
 ## 상세 페이지
 
 ### 1. 메인 페이지
@@ -51,6 +52,8 @@
 
 <img width="273" alt="Screen Shot 2023-01-25 at 2 54 52 PM" src="https://user-images.githubusercontent.com/80627536/214490870-bcc2f70d-47a5-4e56-8a85-24eb98c4295c.png">
 
+  [기쁨, 우울, 졸림]이라는 세가지 선택지에서 유저는 오늘의 기분을 표현할 수 있습니다
+  
 <br />
 <br />
 
@@ -58,12 +61,16 @@
 
 <img width="587" alt="Screen Shot 2023-01-25 at 2 55 58 PM" src="https://user-images.githubusercontent.com/80627536/214491031-463e2019-77da-4d99-b0d6-c1dec7928fad.png">
 
+  프로젝트 당시 멜론 TOP 10 노래들을 가져와서 보여주도록 구현했습니다. 
+  
 <br />
 <br />
 
 #### 1-3. 최신 블로그 글 리스트
 
 <img width="344" alt="Screen Shot 2023-01-25 at 2 56 33 PM" src="https://user-images.githubusercontent.com/80627536/214491118-dc754cac-60b7-4c3c-9d60-8a43d10828e7.png">
+  
+  블로그에 작성된 글들중에서 최신 글 네개를 보여주도록 구현했습니다. 블로그에 글이 업데이트 될 때마다 자동으로 업데이트가 같이 됩니다.
 
 <br />
 <br />
@@ -107,3 +114,32 @@ setTimeout을 통해 입력값에 따라 문구가 1초동안 바뀌도록 구�
 
 외부 라이브러리를 이용하지 않고, Intersection Observer를 이용해 커스텀 훅을 생성하였습니다. 
 
+#### 3-1. 다이어리 디테일 페이지
+  
+  <img width="1057" alt="Screen Shot 2023-01-25 at 3 19 36 PM" src="https://user-images.githubusercontent.com/80627536/214494324-07bc76a4-7102-43e5-af3d-38fcecbd2e82.png">
+
+  다이어리 페이지에서 원하는 다이어리를 선택하면 글 세부 페이지로 이동합니다.
+  세부 페이지에서는 글을 삭제하고, 수정을 할 수 있습니다. 
+  
+  
+  ![ezgif-4-fc7cdeea4b](https://user-images.githubusercontent.com/80627536/214494604-25c65750-6bc4-4bad-a97a-a03a03c74478.gif)
+  
+  글을 원하는대로 수정할 수도 있고
+  
+  ![ezgif-4-01ac879c95](https://user-images.githubusercontent.com/80627536/214494771-133d28e8-5775-4fac-9bc4-c5180dd0c4b6.gif)
+  
+  글을 원하는대로 삭제할 수도 있습니다
+  
+  
+#### 3-2. 다이어리 작성 페이지
+  
+![ezgif-4-5e3d1475bf](https://user-images.githubusercontent.com/80627536/214495055-c47e1046-427a-4ec1-bf9b-e8c561f978c2.gif)
+  
+  다이어리 작성 페이지에서는 새로운 글을 작성할 수 있습니다
+
+  
+  
+  
+  
+  
+  
