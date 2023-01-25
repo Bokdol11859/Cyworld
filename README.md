@@ -1,9 +1,10 @@
 
 <p align="center" >
-<a href="#" align="center"><img width="1298" alt="Screen Shot 2023-01-25 at 2 35 02 PM" src="https://user-images.githubusercontent.com/80627536/214488028-d48d891b-1570-41c8-b923-fe6c9ed3cbf4.png"></a>
+<a href="https://cyworld.vercel.app" align="center"><img width="1298" alt="Screen Shot 2023-01-25 at 2 35 02 PM" src="https://user-images.githubusercontent.com/80627536/214488028-d48d891b-1570-41c8-b923-fe6c9ed3cbf4.png"></a>
 </p>
 <h1 align="center">
-  Next.js로 추억의 싸이월드 구현하기 <br/>  <br/> 
+  Next.js로 추억의 싸이월드 구현하기
+  <br/>  <br/> 
   <div style="display: flex; gap: 10px; align-items: center; justify-content: center">
     <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
     <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"/>
